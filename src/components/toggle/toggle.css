@@ -1,0 +1,44 @@
+.toggle {
+    /* border: 1px solid #DFE5EC; */
+    border-radius: 5px;
+    width: 502px;
+    height: 50px;
+    font-size: 12px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center ;
+    color:#4A4A4A;
+    
+    
+}
+
+.toggle-button{
+    width: 168px;
+    line-height: 50px;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px solid #DFE5EC;
+    
+}
+
+.toggle-button:hover{
+    border-color: inherit;
+    background: #2196F3;
+    color: #FFFFFF;
+
+}
+
+.cheapest{
+    border-right: 0;
+    border-start-start-radius: 5px;
+    border-end-start-radius: 5px;
+}
+
+.fastest{
+    border-right: 0;
+}
+
+.optimal{
+    border-end-end-radius: 5px;
+    border-start-end-radius: 5px;
+}
