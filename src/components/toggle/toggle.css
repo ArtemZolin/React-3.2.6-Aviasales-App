@@ -10,6 +10,7 @@
     color:#4A4A4A;
     
     
+    
 }
 
 .toggle-button{
@@ -18,17 +19,20 @@
     background-color: #ffffff;
     text-align: center;
     border: 1px solid #DFE5EC;
+    cursor: pointer;
     
 }
 
-.toggle-button:hover{
+.toggle-button-active{
     border-color: inherit;
     background: #2196F3;
     color: #FFFFFF;
-
 }
 
-.cheapest{
+
+
+
+.cheapest {
     border-right: 0;
     border-start-start-radius: 5px;
     border-end-start-radius: 5px;
