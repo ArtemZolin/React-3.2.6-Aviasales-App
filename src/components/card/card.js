@@ -42,49 +42,44 @@ function Card ({ data }) {
       
       <div className="card-row">
         
-        <div className=''>
-          {' '}
-          <div className='mow-htk row__style'>
-            {outboundSegment.origin} – {outboundSegment.destination}
-          </div>
-          <div className='time-mow-htk row__style-1'>
-            {formatTime(outboundSegment.date)} –{' '}
-            {formatTime(new Date(new Date(outboundSegment.date).getTime() + outboundSegment.duration * 60000))}
-          </div>
-        </div>
-          
         <div className='mow-htk row__style'>
-          {returnSegment.origin} – {returnSegment.destination}
-        </div>
-
-        <div className=''>
-          {formatTime(returnSegment.date)} –{' '}
-          {formatTime(new Date(new Date(returnSegment.date).getTime() + returnSegment.duration * 60000))}
+          {outboundSegment.origin} – {outboundSegment.destination}
         </div>
           
-      
+        <div className='time-mow-htk row__style-1'>
+          {formatTime(outboundSegment.date)} –{' '}
+          {formatTime(new Date(new Date(outboundSegment.date).getTime() + outboundSegment.duration * 60000))}
+        </div>
 
-        
         <div className='on-the-way row__style'>В пути</div>
-        <div className='time-on-the-way row__style-1'>{formatDuration(outboundSegment.duration)}</div>
-          
-
-         
-        <div className=''>В пути</div>
-        <div className=''>{formatDuration(returnSegment.duration)}</div>
-          
-      
-
-     
         <div className='transfers row__style'>{stopsCountText(outboundSegment.stops)}</div>
         <div className='cities row__style-1'>{stopsInfo(outboundSegment.stops)}</div>
-        
-       
-        <div className=''>{stopsCountText(returnSegment.stops)}</div>
-        <div className=''>{stopsInfo(returnSegment.stops)}</div>
-        
+        <div className='time-on-the-way row__style-1'>{formatDuration(outboundSegment.duration)}</div>
+
       </div>
+
+
+
+
+      <div className=''>
+        {formatTime(returnSegment.date)} –{' '}
+        {formatTime(new Date(new Date(returnSegment.date).getTime() + returnSegment.duration * 60000))}
+      </div>
+          
+      
+      <div className=''>
+        {returnSegment.origin} – {returnSegment.destination}
+      </div>
+                
+      <div className=''>В пути</div>
+      <div className=''>{formatDuration(returnSegment.duration)}</div>
+            
+       
+      <div className=''>{stopsCountText(returnSegment.stops)}</div>
+      <div className=''>{stopsInfo(returnSegment.stops)}</div>
+        
     </div>
+    
    
   
     
