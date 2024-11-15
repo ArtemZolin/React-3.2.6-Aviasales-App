@@ -1,6 +1,6 @@
 import React from "react";
 
-import './card-row.css'
+import './card-row.scss'
 
 function CardRow () {
 

@@ -1,36 +1,46 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 
 // eslint-disable-next-line import/order
 import logo from './logo.svg';
+import {  useDispatch } from 'react-redux'
 
-import './app.css';
-import '../normalize.css'
 
-// eslint-disable-next-line import/order
-import Menu from '../menu';
+
+import { fetchTickets } from '../../api/cardApi'
+import './app.scss';
+import '../normalize.scss'
+import Filter from '../filters';
 import Toggle from "../toggle";
 import CardList from "../card-list";
 
 
 
-export default class App extends Component {
+function  App () {
 
-  render (){
-    // console.log("lol")
+ 
+  const dispatch = useDispatch()
+  
+  useEffect(() => {
+    dispatch(fetchTickets())
+  }, [dispatch])
+ 
+  // console.log("lol")
 
-    return(
-      <div className="app">  
-        <div className="app-wrapper">
-          <div className="logo">
-            <img  src={logo} alt="logo"></img>
-          </div>
-          <Menu />
-          <Toggle />
-          <CardList />
-          <div className="button-show-more"><span>Показать еще 5 билетов!</span></div>
+  return(
+  
+    <div className="app">  
+      <div className="app-wrapper">
+        <div className="logo">
+          <img  src={logo} alt="logo"></img>
         </div>
-       
+        <Filter />
+        <Toggle />
+        <CardList />
       </div>
-    )
-  }
-} 
+    </div>
+   
+  )
+};
+ 
+
+export default App

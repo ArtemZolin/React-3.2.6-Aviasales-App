@@ -1,17 +1,28 @@
-import React from "react";
+// import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import './menu.css'
+import { toggleFilter } from '../store/filterSlice'
+import './filters.scss'
 
 
-function Menu (){
+function Filter (){
+
+  const filters = useSelector((state) => state.filter)
+  const dispatch = useDispatch()
+
+  const checkboxChange = (option) => {
+    dispatch(toggleFilter({option}))
+  }
+
   return (
-    <div className="menu"> 
-      <h3 className="menu-title">КОЛИЧЕСТВО ПЕРЕСАДОК</h3> 
+    <div className="filters"> 
+      <h3 className="filters-title">КОЛИЧЕСТВО ПЕРЕСАДОК</h3> 
       <form className="form">
         <label className="label"> 
           <input className='checkbox visually-hidden'
             type = "checkbox"
-          // onClick = "" 
+            checked={filters.all}
+            onClick = {() => {checkboxChange('all')}}
           ></input>
           <span className="check"></span>
           Все
@@ -20,7 +31,8 @@ function Menu (){
         <label className="label">
           <input className='checkbox visually-hidden'
             type = "checkbox"
-          // onClick = "" 
+            checked={filters.noStops}
+            onClick = {() => {checkboxChange('noStops')}}
           ></input>
           <span  className="check"></span>
           Без пересадок
@@ -29,7 +41,8 @@ function Menu (){
         <label className="label">
           <input className='checkbox visually-hidden'
             type = "checkbox"
-          // onClick = "" 
+            checked={filters.oneStop}
+            onClick = {() => {checkboxChange('oneStop')}}
           ></input>
           <span  className="check"></span>
           1 пересадка
@@ -38,7 +51,8 @@ function Menu (){
         <label className="label">
           <input className='checkbox visually-hidden'
             type = "checkbox"
-          // onClick = "" 
+            checked={filters.twoStops}
+            onClick = {() => {checkboxChange('twoStops')}}
           ></input>
           <span  className="check"></span>
           2 пересадки
@@ -47,7 +61,8 @@ function Menu (){
         <label className="label">
           <input className='checkbox visually-hidden'
             type = "checkbox"
-          // onClick = "" 
+            checked={filters.threeStops}
+            onClick = {() => {checkboxChange('threeStops')}} 
           ></input>
           <span  className="check"></span>
           3 пересадки
@@ -58,4 +73,4 @@ function Menu (){
   )
 }
 
-export default Menu
+export default Filter
