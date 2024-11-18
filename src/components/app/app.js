@@ -24,8 +24,6 @@ function  App () {
     dispatch(fetchTickets())
   }, [dispatch])
  
-  // console.log("lol")
-
   return(
   
     <div className="app">  

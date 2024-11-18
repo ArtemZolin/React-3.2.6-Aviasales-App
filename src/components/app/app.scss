@@ -9,7 +9,7 @@
 }
 
 .app-wrapper{
-    border: 1px solid red;
+    // border: 1px solid red;
     max-width: 754px;
     min-height: 100vh;
     display: grid; 
@@ -24,7 +24,6 @@
         'label1 label3 label3 '
         'label1 label4 label4 '
        ; 
-
 }
 
 .logo{
@@ -46,16 +45,24 @@
     grid-area: label3 ;
 }
 
-.button-show-more{
-    grid-area: label4; 
-    width: 502px;
-    height: 50px;
-    background: #2196F3;
-    color: #FFFFFF;
-    border-radius: 5px;
-    /* text-align: center; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
+@media (max-width: 769px){
+    .app-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo{
+        padding: 10px 0;
+    }
+
+}
+
+@media (max-width: 320px){
+    .app {
+        overflow:scroll;
+    }
     
 }

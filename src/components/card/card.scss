@@ -30,23 +30,9 @@
     font-weight: 600;
 }
 
-
-.card-row{
-    
-    display: grid;
-    grid-template-rows: 18px 21px  ;
-    grid-template-columns: auto auto ;
-
-    grid-template-areas: 
-    'area0 area1 area2 '
-    'area3 area4 area5 '
-    ; 
-
-}
 .row__style{
     font-size: 12px;
     color: #A0B0B9;
-
 }
 
 .row__style-1{
@@ -55,9 +41,20 @@
     font-weight: 600;
 }
 
-.mow-htk{
-    grid-area: area0; 
+.card-row-there{
     
+    display: grid;
+    grid-template-rows: 18px 21px  ;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    'area0 area1 area2 '
+    'area3 area4 area5 '
+    ; 
+}
+
+.mow-htk{
+    grid-area: area0;   
 }
 
 .on-the-way{
@@ -78,4 +75,50 @@
 
 .cities{
     grid-area: area5 ;
+}
+
+.card-row-back{
+    
+    display: grid;
+    grid-template-rows: 18px 21px  ;
+    grid-template-columns: 1fr 1fr 1fr ;
+
+    grid-template-areas: 
+    'area0 area1 area2 '
+    'area3 area4 area5 '
+    ; 
+}
+
+.mow-htk-back{
+    grid-area: area0;   
+}
+
+.on-the-way-back{
+    grid-area: area1; 
+}
+
+.transfers-back{
+    grid-area: area2; 
+}
+
+.time-mow-htk-back{
+    grid-area: area3 ;
+}
+
+.time-on-the-way-back{
+    grid-area: area4 ;
+}
+
+.cities-back{
+    grid-area: area5 ;
+}
+
+
+@media (max-width: 540px){
+
+    .card{
+        width: 320px;
+        padding: 10px;
+        gap: 10px;
+    }
 }

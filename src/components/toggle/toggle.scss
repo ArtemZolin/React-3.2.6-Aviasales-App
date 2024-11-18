@@ -7,10 +7,7 @@
     box-sizing: border-box;
     display: flex;
     align-items: center ;
-    color:#4A4A4A;
-    
-    
-    
+    color:#4A4A4A;   
 }
 
 .toggle-button{
@@ -19,8 +16,7 @@
     background-color: #ffffff;
     text-align: center;
     border: 1px solid #DFE5EC;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 
 .toggle-button-active{
@@ -42,4 +38,17 @@
 .optimal{
     border-end-end-radius: 5px;
     border-start-end-radius: 5px;
+}
+
+@media (max-width: 540px){
+    .toggle {
+        width: 320px;
+        height: 100px;
+    }
+    .toggle-button{
+ 
+        height: 100%;
+        line-height: 50px;
+        
+    }
 }
