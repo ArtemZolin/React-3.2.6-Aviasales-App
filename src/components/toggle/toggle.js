@@ -1,33 +1,39 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react' 
-import { useDispatch} from 'react-redux'
+import { useDispatch,useSelector} from 'react-redux'
 
 import { setActiveTab } from '../store/tabsSlice'
+
+
 
 import './toggle.scss'
 
 function Toggle() {
   const dispatch = useDispatch()
-  // const activeTab = useSelector((state) => state.tabs)
+  const activeTab = useSelector((state) => state.tabs)
 
-  const handleTabClick = (tab) => {
-    dispatch(setActiveTab(tab))
-  }
-
+  const handleTabClick = (tab) => 
+    dispatch(setActiveTab(tab)
+    )
+  
+ 
   return(
     <div className="toggle">
       <div 
-        className="cheapest toggle-button toggle-button-active"
+        key={1}
+        className = {`cheapest toggle-button ${activeTab === 'cheapest' ? "toggle-button-active" : ''}`}
         onClick={() => handleTabClick('cheapest')}
-      >САМЫЙ ДЕШЕВЫЙ</div>
-      <div 
-        className="fastest toggle-button"
-        onClick={() => handleTabClick('fastest')}
-      >САМЫЙ БЫСТРЫЙ</div>
+      ><span>САМЫЙ ДЕШЕВЫЙ</span></div>
       <div
-        className="optimal toggle-button"
+        key={2} 
+        className={`fastest toggle-button ${activeTab === 'fastest' ? "toggle-button-active" : ''}`}
+        onClick={() => handleTabClick('fastest')}
+      ><span>САМЫЙ БЫСТРЫЙ </span></div>
+      <div
+        key={3}
+        className={`optimal toggle-button ${activeTab === 'optimal' ? "toggle-button-active" : ''}`}
         onClick={() => handleTabClick('optimal')}
-      >ОПТИМАЛЬНЫЙ</div>
+      ><span>ОПТИМАЛЬНЫЙ</span></div>
     </div>
   )
 }
